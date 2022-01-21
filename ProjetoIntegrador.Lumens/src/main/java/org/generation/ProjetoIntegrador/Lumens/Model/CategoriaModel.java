@@ -17,15 +17,15 @@ public class CategoriaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
+    @NotNull(message = "O atributo nome é obrigatório.")
     @Size(min = 5, max = 100,  message = "O nome deve conter no mínimo 5 e no máximo 100 caracteres")
     private String nome;
 
-    @NotNull
+    @NotNull(message = "O atributo descricao é obrigatório.")
     @Size(min = 5, max = 100, message = "A descrição deve conter no mínimo 5 e no máximo 100 caracteres")
     private String descricao;
 
-    @NotNull
+    @NotNull(message = "O atributo setor é obrigatório.")
     @Size(min = 5, max = 10, message = "o setor deve conter no mínimo 5 e no máximo 100 caracteres")
     private String setor;
 
