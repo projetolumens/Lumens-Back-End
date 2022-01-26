@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ProjetoIntegrador.Lumens.Repository.ProdutoRepository;
+
 @RestController
 @RequestMapping("/produto")
 @CrossOrigin(origins="*",allowedHeaders="*")
@@ -42,9 +44,8 @@ public class ProdutoController {
 	}
 
 	@PutMapping
-	public ResponseEntity<ProdutoModel> put(@Valid @RequestBody ProdutoModel produtoModel) { 
-
-		return produtoRepository.findById(produtoModel.getId())
+	public ResponseEntity<ProdutoModel> put(@Valid @RequestBody ProdutoModel produtoModel) {
+		return produtoRepository.findById(produtoModel.getId_produto())
 				.map(resposta -> ResponseEntity.ok().body(produtoRepository.save(produtoModel))) 
 				.orElse(ResponseEntity.notFound().build());
 	}
