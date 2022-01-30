@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.generation.Lumens.model.ProdutoModel;
+import org.generation.Lumens.model.Produto;
 import org.generation.Lumens.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,38 +28,38 @@ public class ProdutoController {
 	private ProdutoRepository produtoRepository;
 
 	@GetMapping
-	public ResponseEntity<List<ProdutoModel>> getAll() {
+	public ResponseEntity<List<Produto>> getAll() {
 		return ResponseEntity.ok(produtoRepository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<ProdutoModel> getById(@PathVariable long id) {
+	public ResponseEntity<Produto> getById(@PathVariable long id) {
 
 		return produtoRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.notFound().build());
 	}
 
 	@GetMapping("/produto/{produto}")
-	public ResponseEntity<List<ProdutoModel>> getByProduto(@PathVariable String produto) {
+	public ResponseEntity<List<Produto>> getByProduto(@PathVariable String produto) {
 
 		return ResponseEntity.ok(produtoRepository.findAllByProdutoContainingIgnoreCase(produto));
 	}
 
 	@PostMapping
-	public ResponseEntity<ProdutoModel> postProdutoModel(@Valid @RequestBody ProdutoModel produtoModel) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produtoModel));
+	public ResponseEntity<Produto> postProduto(@Valid @RequestBody Produto produto) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 	}
 
 	@PutMapping
-	public ResponseEntity<ProdutoModel> putProdutoModel(@Valid @RequestBody ProdutoModel produtoModel) {
+	public ResponseEntity<Produto> putProduto(@Valid @RequestBody Produto produto) {
 
-		return produtoRepository.findById(produtoModel.getId_produto())
-				.map(resposta -> ResponseEntity.ok().body(produtoRepository.save(produtoModel)))
+		return produtoRepository.findById(produto.getId_produto())
+				.map(resposta -> ResponseEntity.ok().body(produtoRepository.save(produto)))
 				.orElse(ResponseEntity.notFound().build());
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteProdutoModel(@PathVariable long id) {
+	public ResponseEntity<?> deleteProduto(@PathVariable long id) {
 		return produtoRepository.findById(id).map(resposta -> {
 			produtoRepository.deleteById(id);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_categoria")
-public class CategoriaModel {
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,9 +47,9 @@ public class CategoriaModel {
     // combo box
     //comercial , residencial, rural , industrial
     
-    @OneToMany (mappedBy = "categoriaModel", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties ("categoriaModel")
-    private List<ProdutoModel> produtoModel;
+    @OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties ("categoria")
+    private List<Produto> produto;
 
 	public long getId() {
 		return id;
@@ -83,14 +83,15 @@ public class CategoriaModel {
 		this.setor = setor;
 	}
 
-	public List<ProdutoModel> getProdutoModel() {
-		return produtoModel;
+	public List<Produto> getProduto() {
+		return produto;
 	}
 
-	public void setProdutoModel(List<ProdutoModel> produtoModel) {
-		this.produtoModel = produtoModel;
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
 	}
 
+	
     
 }
 	

@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 	@Entity
 	@Table(name = "tb_produto")
-	public class ProdutoModel {
+	public class Produto {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,20 +31,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		private String descricao;
 		 
 		@NotNull(message = "O atributo foto é obrigatório.")
-		@Size(min = 5, max = 100, message = "O link da foto deve conter no mínimo 5 e no máximo 100 caracteres")
+		@Size(min = 5, max = 1000, message = "O link da foto deve conter no mínimo 5 e no máximo 1000 caracteres")
 		private String foto;
 		
-		@Range(min = 0)
-		private float valor;
-		
-		@ManyToOne
-		@JsonIgnoreProperties ("produtoModel")		
-		private CategoriaModel categoriaModel;
-		
-		@ManyToOne
-		@JsonIgnoreProperties("produtoModel")
-		private UsuarioModel usuarioModel;
-
 		public long getId_produto() {
 			return id_produto;
 		}
@@ -85,21 +74,33 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 			this.valor = valor;
 		}
 
-		public CategoriaModel getCategoriaModel() {
-			return categoriaModel;
+		public Categoria getCategoria() {
+			return categoria;
 		}
 
-		public void setCategoriaModel(CategoriaModel categoriaModel) {
-			this.categoriaModel = categoriaModel;
+		public void setCategoria(Categoria categoria) {
+			this.categoria = categoria;
 		}
 
-		public UsuarioModel getUsuarioModel() {
-			return usuarioModel;
+		public Usuario getUsuario() {
+			return usuario;
 		}
 
-		public void setUsuarioModel(UsuarioModel usuarioModel) {
-			this.usuarioModel = usuarioModel;
+		public void setUsuario(Usuario usuario) {
+			this.usuario = usuario;
 		}
 
+		@Range(min = 0)
+		private float valor;
+		
+		@ManyToOne
+		@JsonIgnoreProperties ("produto")		
+		private Categoria categoria;
+		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
+		private Usuario usuario;
+
+		
 
 	}	
