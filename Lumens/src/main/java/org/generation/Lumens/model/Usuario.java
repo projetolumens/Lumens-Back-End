@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "tb_usuario")
-public class UsuarioModel {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,69 +32,81 @@ public class UsuarioModel {
 	@ApiModelProperty(example = "email@email.com.br")
 	@NotNull (message = "O atributo e-mail é obrigatório!")
 	@Email(message = "O campo deve ser preenchido com um e-mail válido.")
-	private String email;
+	private String usuario;
 
 	@NotNull (message = "Senha obrigatória!")
 	@Size(min = 8, message = "O campo deve conter no minimo 8 caracteres.")
 	private String senha;
+	
+	private String foto;
 		
 
-	@OneToMany(mappedBy = "usuarioModel", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("usuarioModel")
-	private List<ProdutoModel> produtoModel;
-	
-	/**
-	 * Construtor com atributos da Classe Usuario
-	 *  Não adicionar o atributo postagem 
-	 */
-	public UsuarioModel(long idUsuario, String nomeCompleto, String email, String senha) {
-		
-		this.idUsuario = idUsuario;
-		this.nomeCompleto = nomeCompleto;
-		this.email = email;
-		this.senha = senha;
-		
-	}
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
+	private List<Produto> produto;
+
 
 	public long getIdUsuario() {
 		return idUsuario;
 	}
 
+
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
 
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}
 
+
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public String getEmail() {
-		return email;
+
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
+
 
 	public String getSenha() {
 		return senha;
 	}
 
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	public List<ProdutoModel> getProdutoModel() {
-		return produtoModel;
+
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setProdutoModel(List<ProdutoModel> produtoModel) {
-		this.produtoModel = produtoModel;
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
+
+
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+	
+	
+	
 
 	
 }
