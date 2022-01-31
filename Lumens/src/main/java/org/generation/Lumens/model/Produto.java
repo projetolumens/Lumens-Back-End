@@ -34,6 +34,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@Size(min = 5, max = 1000, message = "O link da foto deve conter no mínimo 5 e no máximo 1000 caracteres")
 		private String foto;
 		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
+		private Categoria categoria;
+		
+		@ManyToOne
+		@JsonIgnoreProperties("produto")
+		private Usuario usuario;
+
 		public long getId_produto() {
 			return id_produto;
 		}
@@ -66,14 +74,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 			this.foto = foto;
 		}
 
-		public float getValor() {
-			return valor;
-		}
-
-		public void setValor(float valor) {
-			this.valor = valor;
-		}
-
 		public Categoria getCategoria() {
 			return categoria;
 		}
@@ -89,18 +89,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
 		}
-
-		@Range(min = 0)
-		private float valor;
 		
-		@ManyToOne
-		@JsonIgnoreProperties ("produto")		
-		private Categoria categoria;
-		
-		@ManyToOne
-		@JsonIgnoreProperties("produto")
-		private Usuario usuario;
-
-		
-
-	}	
+	}
