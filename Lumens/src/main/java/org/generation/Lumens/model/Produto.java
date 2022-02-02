@@ -34,6 +34,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@Size(min = 5, max = 1000, message = "O link da foto deve conter no mínimo 5 e no máximo 1000 caracteres")
 		private String foto;
 		
+		@Range(min = 0)
+		private float preco;
+		
 		@ManyToOne
 		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
