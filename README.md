@@ -17,6 +17,7 @@ Back-end:
 
 
 
+
 ## 👤🗯 Os colaboradores deste projeto!!
 <table>
 <tr>
@@ -31,5 +32,7 @@ width="100px;" alt=""/><br /><sub><b>João Lucas</b></sub></a><br /><a
 href="https://github.com/LuukasOo" title="GitHub João Lucas"></a></td> <td align="center"><a 
 href="https://github.com/JessicaPersou"><img style="border-radius: 50%;" 
 src="https://cdn.discordapp.com/attachments/912136460294041681/932681028017991690/ppp.png" width="100px;" alt=""/><br /><sub><b>Jéssica</b></sub></a><br /><a 
-href="https://github.com/JessicaPersou" title="GitHub Jéssica"></a></td>
+href="https://github.com/JessicaPersou" title="GitHub Jéssica"></a></td> <td align="center"><a href="https://github.com/gtamie"><img style="border-radius: 50%;" 
+src="https://cdn.discordapp.com/attachments/912136460294041681/938493819312291940/giu.png" width="100px;" alt=""/><br /><sub><b>Jéssica</b></sub></a><br /><a 
+href="https://https://github.com/gtamie" title="GitHub Giuliana"></a></td>
 
