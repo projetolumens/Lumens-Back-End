@@ -2,7 +2,7 @@ package org.generation.Lumens.model;
 
 public class UsuarioLogin {
 	
-private long idUsuario;
+private long id;
 	
 	private String nomeCompleto;
 	
@@ -15,12 +15,12 @@ private long idUsuario;
 	
 	private String foto;
 
-	public long getIdUsuario() {
-		return idUsuario;
+	public long getId() {
+		return id;
 	}
 
-	public void setIdUsuario(long idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getNomeCompleto() {
@@ -62,9 +62,5 @@ private long idUsuario;
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	
-	
 
-	
-	
 }
