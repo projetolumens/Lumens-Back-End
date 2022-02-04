@@ -15,8 +15,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import io.swagger.annotations.ApiModelProperty;
-
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -24,12 +23,12 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idUsuario;
+	private long id;
 
 	@NotNull (message = "O nome é obrigatório.")
 	private String nomeCompleto;
 	
-	@ApiModelProperty(example = "email@email.com.br")
+	@Schema(example = "email@email.com.br")
 	@NotNull (message = "O atributo e-mail é obrigatório!")
 	@Email(message = "O campo deve ser preenchido com um e-mail válido.")
 	private String usuario;
@@ -45,67 +44,64 @@ public class Usuario {
 	private List<Produto> produto;
 
 
-	public long getIdUsuario() {
-		return idUsuario;
+	public Usuario(long id, String nomeCompleto, String usuario, String senha) {
+		
+		this.id = id;
+		this.nomeCompleto = nomeCompleto;
+		this.usuario = usuario;
+		this.senha = senha;
+		}
+
+	public Usuario() {
 	}
 
-
-	public void setIdUsuario(long idUsuario) {
-		this.idUsuario = idUsuario;
+	public long getId() {
+		return id;
 	}
 
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}
 
-
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-
 
 	public String getUsuario() {
 		return usuario;
 	}
 
-
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
 
 	public String getSenha() {
 		return senha;
 	}
 
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
 
 	public String getFoto() {
 		return foto;
 	}
 
-
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-
 
 	public List<Produto> getProduto() {
 		return produto;
 	}
 
-
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-	
-	
-	
+}
 
 	
-}

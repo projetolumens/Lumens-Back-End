@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id_produto;
+		private long id;
 		
 		@NotNull(message = "O atributo nome do produto é obrigatório.")
 		@Size(min = 5, max = 100,  message = "O nome do produto deve conter no mínimo 5 e no máximo 100 caracteres")
@@ -45,12 +45,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@JsonIgnoreProperties("produto")
 		private Usuario usuario;
 
-		public long getId_produto() {
-			return id_produto;
+		
+		public long getId() {
+			return id;
 		}
 
-		public void setId_produto(long id_produto) {
-			this.id_produto = id_produto;
+		public void setId(long id) {
+			this.id = id;
 		}
 
 		public String getProduto() {
@@ -92,5 +93,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
 		}
-		
+
 	}
