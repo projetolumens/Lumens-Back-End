@@ -7,14 +7,20 @@
 O Lumens foi criado para ser apresentado como Projeto Final de grupo da Turma-43 do Curso Bootcamp para Desenvolvedores Web Full Stack Java da ONG Generation Brasil. Com o objetivo de apresentar soluções tecnológicas para alcançar a ODS 7 - Energia Acessível e Limpa.
 Somos um e-Commerce focado em ajudar e conscientizar uma parte da população vulnerável economicamente, oferecendo informações e suporte para descartes e troca de produtos, de maneira ecológica, em conjunto com empresas e pontos ecológicos que visam  o desenvolvimento sustentável. 
 
-
 ## 🔧 Etapas do Desenvolvimento:
-Back-end:  
-- Definição do escopo do projeto
-- Modelagem do Banco de Dados
-- Criação do projeto Maven usando o Spring Boot
-- Desenvolvimento das camadas de entidade,repository,controller,service,security e test do projeto
+  Back-end:  
+- Definição do escopo do projeto;
+- Modelagem do Banco de Dados;
+- Criação do projeto Maven usando o Spring Boot;
+- Desenvolvimento das camadas de entidade,repository,controller,service,security e test do projeto;
+  
+Front-end:  
+- Criando os componentes do Front-End (- Navbar - Footer - Página de Login - Página de cadastro - Página de Sobre );
+- Ligação do Back com o Front ( Ligação na pagina do Login e do Cadastro );
+- Implementação do consumo HTTP das páginas de postagem e tema ( GET e Post );
+- Implementação do consumo HTTP das páginas de postagem e tema ( Delete e Put );
 
+🚀 Futuras Implementações:
 
 
 
