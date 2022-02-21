@@ -10,12 +10,18 @@ Somos um e-Commerce focado em ajudar e conscientizar uma parte da população vu
 
 ## 🔧 Etapas do Desenvolvimento:
 Back-end:  
-- Definição do escopo do projeto
-- Modelagem do Banco de Dados
-- Criação do projeto Maven usando o Spring Boot
-- Desenvolvimento das camadas de entidade,repository,controller,service,security e test do projeto
+- Definição do escopo do projeto;
+- Modelagem do Banco de Dados;
+- Criação do projeto Maven usando o Spring Boot;
+- Desenvolvimento das camadas de entidade,repository,controller,service,security e test do projeto;
 
-
+Front-end:  
+- Criando os componentes do Front-End (- Navbar - Footer - Página de Login - Página de cadastro - Página de Sobre );
+- Ligação do Back com o Front ( Ligação na pagina do Login e do Cadastro );
+- Implementação do consumo HTTP das páginas de postagem e tema ( GET e Post );
+- Implementação do consumo HTTP das páginas de postagem e tema ( Delete e Put );
+  
+  🚀 Futuras Implementações:
 
 
 ## 👤🗯 Os colaboradores deste projeto!!
