@@ -14,6 +14,8 @@ private long id;
 	private String token;
 	
 	private String foto;
+	
+	private String tipo;
 
 	public long getId() {
 		return id;
@@ -63,4 +65,14 @@ private long id;
 		this.foto = foto;
 	}
 
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	
+	
 }

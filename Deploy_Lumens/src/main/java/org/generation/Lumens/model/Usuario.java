@@ -37,6 +37,8 @@ public class Usuario {
 	@Size(min = 8, message = "O campo deve conter no minimo 8 caracteres.")
 	private String senha;
 	
+	private String tipo;
+	
 	private String foto;
 		
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
@@ -85,6 +87,15 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getFoto() {
