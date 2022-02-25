@@ -73,6 +73,4 @@ private long id;
 		this.tipo = tipo;
 	}
 
-	
-	
 }
