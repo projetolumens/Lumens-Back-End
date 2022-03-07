@@ -50,6 +50,10 @@ public class Categoria {
     @OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
     @JsonIgnoreProperties ("categoria")
     private List<Produto> produto;
+    
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
+	private List<Postagem> postagem;
 
 	public long getId() {
 		return id;

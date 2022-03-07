@@ -13,4 +13,3 @@ import org.springframework.stereotype.Repository;
 		public List<Categoria> findAllByNomeContainingIgnoreCase(String nome);
 
 }
-
