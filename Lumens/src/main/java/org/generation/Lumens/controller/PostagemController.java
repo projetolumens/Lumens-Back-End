@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.generation.Lumens.model.Postagem;
+import org.generation.Lumens.model.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,9 +41,9 @@ public class PostagemController {
 			.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity <List<Postagem>> getByTitulo(@PathVariable String titulo){
-		return ResponseEntity.ok(postagemRepository.findAllByTituloContainingIgnoreCase(titulo));
+	@GetMapping("/retirada/{retirada}")
+	public ResponseEntity<List<Produto>> getByRetirada(@PathVariable String retirada){
+		return ResponseEntity.ok(postagemRepository.findAllByRetiradaContainingIgnoreCase(retirada));
 	}
 		
 	@PostMapping
