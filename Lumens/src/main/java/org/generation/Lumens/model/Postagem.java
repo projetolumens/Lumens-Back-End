@@ -23,15 +23,21 @@ public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotBlank(message = "O atributo região é Obrigatório!")
+	@Size(min = 5, max = 100, message = "O atributo região é obrigatório")
+	private String regiao;
 
-	@NotBlank(message = "O atributo titulo é Obrigatório!")
-	@Size(min = 5, max = 100, message = "O atributo titulo deve ter no mínimo 5 e no máximo 100 caracteres")
-	private String titulo;
+	@NotNull(message = "O atributo periodo é Obrigatório!")
+	@Size(min = 10, max = 1000, message = "O atributo periodo é obrigatório")
+	private String periodo;
 
-	@NotNull(message = "O atributo texto é Obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no mínimo 10 e no máximo 1000 caracteres")
-	private String texto;
-
+	@NotNull(message = "O atributo retirada é Obrigatório!")
+	@Size(min = 10, max = 1000, message = "O atributo retirada é Obrigatório!")
+	private String retirada;
+	
+	private String foto;
+	
 	@UpdateTimestamp
 	private LocalDate data;
 
@@ -47,24 +53,36 @@ public class Postagem {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public String getRegiao() {
+		return regiao;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public void setRegiao(String regiao) {
+		this.regiao = regiao;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public String getPeriodo() {
+		return periodo;
 	}
 
-	public String getTexto() {
-		return texto;
+	public void setPeriodo(String periodo) {
+		this.periodo = periodo;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
+	public String getRetirada() {
+		return retirada;
+	}
+
+	public void setRetirada(String retirada) {
+		this.retirada = retirada;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public LocalDate getData() {
@@ -75,7 +93,7 @@ public class Postagem {
 		this.data = data;
 	}
 
-	public Categoria getTema() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
@@ -91,4 +109,10 @@ public class Postagem {
 		this.usuario = usuario;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
+	
 }
