@@ -37,13 +37,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 		@Range(min = 0)
 		private float preco;
 		
-		@ManyToOne
+		/*@ManyToOne
 		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
 		
 		@ManyToOne
 		@JsonIgnoreProperties("produto")
-		private Usuario usuario;
+		private Usuario usuario;*/
 
 		
 		public long getId() {
@@ -78,7 +78,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 			this.foto = foto;
 		}
 
-		public Categoria getCategoria() {
+		/*public Categoria getCategoria() {
 			return categoria;
 		}
 
@@ -92,6 +92,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 		public void setUsuario(Usuario usuario) {
 			this.usuario = usuario;
-		}
+		}*/
 
 	}
