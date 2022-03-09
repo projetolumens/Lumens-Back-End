@@ -21,11 +21,7 @@ Front-end:
 - Implementação do consumo HTTP das páginas de postagem e tema ( Delete e Put );
 
 🚀 Futuras Implementações:
-- Empresas parceiras
-- Sistema de cashback
-- Verificação de produtos postados
-- Locais de coleta 
-- Sistema de coleta
+
 
 
 ## 👤🗯 Os colaboradores deste projeto!!

@@ -47,15 +47,14 @@ public class Categoria {
     // combo box
     //comercial , residencial, rural , industrial
     
-    @OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
+    /*@OneToMany (mappedBy = "categoria", cascade = CascadeType.ALL)
     @JsonIgnoreProperties ("categoria")
-    private List<Produto> produto;
-
-
+    private List<Produto> produto;*/
+    
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<Postagem> postagem;
-	
+
 	public long getId() {
 		return id;
 	}
@@ -88,13 +87,13 @@ public class Categoria {
 		this.setor = setor;
 	}
 
-	public List<Produto> getProduto() {
+	/*public List<Produto> getProduto() {
 		return produto;
 	}
 
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
-	}
+	}*/
 
 	
     

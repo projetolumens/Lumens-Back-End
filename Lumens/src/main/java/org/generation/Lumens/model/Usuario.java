@@ -41,9 +41,9 @@ public class Usuario {
 	
 	private String tipo;
 		
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	/*@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private List<Produto> produto;
+	private List<Produto> produto;*/
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -100,13 +100,13 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public List<Produto> getProduto() {
+	/*public List<Produto> getProduto() {
 		return produto;
 	}
 
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
-	}
+	}*/
 
 	public String getTipo() {
 		return tipo;

@@ -25,21 +25,18 @@ public class Postagem {
 	private Long id;
 	
 	@NotBlank(message = "O atributo região é Obrigatório!")
-	@Size(min = 5, max = 100, message = "O atributo região é obrigatório")
+	//@Size(min = 5, max = 100, message = "O atributo região é obrigatório")
 	private String regiao;
 
-	@NotNull(message = "O atributo periodo é Obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo periodo é obrigatório")
-	private String periodo;
 
 	@NotNull(message = "O atributo retirada é Obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo retirada é Obrigatório!")
+	//@Size(min = 10, max = 1000, message = "O atributo retirada é Obrigatório!")
 	private String retirada;
 	
 	private String foto;
 	
-	@UpdateTimestamp
-	private LocalDate data;
+	
+	private String data;
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
@@ -61,13 +58,6 @@ public class Postagem {
 		this.regiao = regiao;
 	}
 
-	public String getPeriodo() {
-		return periodo;
-	}
-
-	public void setPeriodo(String periodo) {
-		this.periodo = periodo;
-	}
 
 	public String getRetirada() {
 		return retirada;
@@ -85,13 +75,7 @@ public class Postagem {
 		this.foto = foto;
 	}
 
-	public LocalDate getData() {
-		return data;
-	}
-
-	public void setData(LocalDate data) {
-		this.data = data;
-	}
+	
 
 	public Categoria getCategoria() {
 		return categoria;
@@ -111,6 +95,14 @@ public class Postagem {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 
 	
