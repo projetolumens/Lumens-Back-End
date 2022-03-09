@@ -87,6 +87,14 @@ public class Categoria {
 		this.setor = setor;
 	}
 
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
+
 	/*public List<Produto> getProduto() {
 		return produto;
 	}
