@@ -18,5 +18,5 @@ Somos um e-Commerce focado em ajudar e conscientizar uma parte da população vu
 - Spring Framework;
 - MySQL;
 
-Ele está já está pronto e rodando nesse link: https://lumens.netlify.app/#/inicio
+## Ele está já está pronto e rodando nesse link: https://lumens.netlify.app/#/inicio
 
